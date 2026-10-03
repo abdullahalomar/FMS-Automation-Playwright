@@ -1,0 +1,30 @@
+{
+  "name": "fms-automation",
+  "version": "1.0.0",
+  "description": "Playwright Automation Framework for Functional Movement Systems (FMS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed --project=chromium --workers=1",
+    "test:auth": "playwright test tests/auth/login.spec.ts --project=chromium",
+    "test:auth:headed": "playwright test tests/auth/login.spec.ts --headed --project=chromium --workers=1",
+    "test:login:headed": "playwright test tests/auth/login.spec.ts -g \"Verify user can log in successfully\" --headed --project=chromium",
+    "test:admin": "playwright test tests/admin/adminLogin.spec.ts --project=chromium",
+    "test:admin:headed": "playwright test tests/admin/adminLogin.spec.ts -g \"Verify admin can log in successfully\" --headed --project=chromium",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "page-object-model"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4"
+  }
+}

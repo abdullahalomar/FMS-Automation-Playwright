@@ -1,7 +1,7 @@
 import { test, expect } from '../../src/fixtures/test.fixture';
 import { testConfig } from '../../config/testConfig';
 
-test.describe('FMS Authentication Test Suite', () => {
+test.describe('FMS User Authentication Test Suite', () => {
 
   test.beforeEach(async ({ loginPage }) => {
     // Navigate to sign-in page before each test

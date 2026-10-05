@@ -4,6 +4,7 @@ import { DashboardPage } from '../pages/dashboard.page';
 import { AdminLoginPage } from '../pages/admin/adminLogin.page';
 import { AdminDashboardPage } from '../pages/admin/adminDashboard.page';
 import { AdminEventsPage } from '../pages/admin/adminEvents.page';
+import { CoursePage } from '../pages/course.page';
 
 // Declare fixture types
 type PageObjects = {
@@ -12,6 +13,7 @@ type PageObjects = {
   adminLoginPage: AdminLoginPage;
   adminDashboardPage: AdminDashboardPage;
   adminEventsPage: AdminEventsPage;
+  coursePage: CoursePage;
 };
 
 /**
@@ -41,6 +43,11 @@ export const test = base.extend<PageObjects>({
   adminEventsPage: async ({ page }, use) => {
     const adminEventsPage = new AdminEventsPage(page);
     await use(adminEventsPage);
+  },
+
+  coursePage: async ({ page }, use) => {
+    const coursePage = new CoursePage(page);
+    await use(coursePage);
   },
 });
 

@@ -9,7 +9,7 @@ test.describe('FMS User Dashboard Exams Test Suite', () => {
   });
 
   test('Verify user can navigate to My Courses and Exams tab', async ({ loginPage, dashboardPage, page }) => {
-    const { email, password } = testConfig.credentials.validUser;
+    const { email, password } = testConfig.getUser();
 
     // 1. Perform Login
     await loginPage.login(email, password);

@@ -22,13 +22,14 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    viewport: { width: 1920, height: 1080 }, // Default Full HD Viewport for all tests
+    viewport: null,
   },
 
   projects: [
     {
       name: 'chromium',
       use: {
+        viewport: null,
         launchOptions: {
           args: ['--start-maximized'], // Maximize browser window in headed mode
         },
@@ -36,11 +37,17 @@ export default defineConfig({
     },
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        ...devices['Desktop Firefox'],
+        viewport: null,
+      },
     },
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: {
+        ...devices['Desktop Safari'],
+        viewport: null,
+      },
     },
   ],
 });

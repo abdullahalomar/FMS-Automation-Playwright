@@ -13,6 +13,8 @@
     "test:user-dashboard:headed": "playwright test tests/user-dashboard --headed --project=chromium --workers=1",
     "test:exam": "playwright test tests/user-dashboard/exam.spec.ts --project=chromium",
     "test:exam:headed": "playwright test tests/user-dashboard/exam.spec.ts --headed --project=chromium --workers=1",
+    "test:course": "playwright test tests/user-dashboard/course.spec.ts --project=chromium",
+    "test:course:headed": "playwright test tests/user-dashboard/course.spec.ts --headed --project=chromium --workers=1",
     "test:login:headed": "playwright test tests/user-dashboard/login.spec.ts -g \"Verify user can log in successfully\" --headed --project=chromium",
     "test:admin": "playwright test tests/admin/adminLogin.spec.ts --project=chromium",
     "test:admin:headed": "playwright test tests/admin/adminLogin.spec.ts -g \"Verify admin can log in successfully\" --headed --project=chromium",

@@ -1,0 +1,14 @@
+[
+  {
+    "key": "user1",
+    "name": "QA Main User",
+    "email": "testqa@gmail.com",
+    "password": "123456789"
+  },
+  {
+    "key": "user2",
+    "name": "QA Secondary User",
+    "email": "guest@gmail.com",
+    "password": "123456789"
+  }
+]

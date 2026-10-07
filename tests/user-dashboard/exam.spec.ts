@@ -1,6 +1,9 @@
 import { test, expect } from '../../src/fixtures/test.fixture';
 import { testConfig } from '../../config/testConfig';
 
+
+const TARGET_COURSE_ID_OR_NAME = 'Squat Pattern';
+
 test.describe('FMS User Dashboard Exams Test Suite', () => {
 
   test.beforeEach(async ({ loginPage }) => {
@@ -8,11 +11,11 @@ test.describe('FMS User Dashboard Exams Test Suite', () => {
     await loginPage.navigate();
   });
 
-  test('Verify user can navigate to My Courses and Exams tab', async ({ loginPage, dashboardPage, page }) => {
-    const { email, password } = testConfig.getUser();
+  test('Verify user can navigate to Exams tab and take test by course ID or Name', async ({ loginPage, dashboardPage, page }) => {
+    const user = testConfig.getUser('user2');
 
     // 1. Perform Login
-    await loginPage.login(email, password);
+    await loginPage.login(user.email, user.password);
 
     // 2. Verify Dashboard is loaded after login
     await dashboardPage.verifyDashboardLoaded();
@@ -26,7 +29,10 @@ test.describe('FMS User Dashboard Exams Test Suite', () => {
     // 5. Verify Exams section is loaded successfully
     await dashboardPage.verifyExamsPageLoaded();
 
-    // Pause for 5 seconds after navigation so user can inspect UI
+    // 6. Click "Take Test" button for the specified Course (by ID or Name)
+    await dashboardPage.takeTestByCourse(TARGET_COURSE_ID_OR_NAME);
+
+    // Pause for 5 seconds after clicking Take Test button so user can inspect UI
     await page.waitForTimeout(5000);
   });
 

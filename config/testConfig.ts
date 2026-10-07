@@ -14,7 +14,7 @@ export const testConfig = {
   baseUrl: process.env.BASE_URL || 'https://staging.functionalmovement.site',
   loginUrl: 'https://staging.functionalmovement.site/sign-in',
   dashboardUrl: 'https://staging.functionalmovement.site/user/dashboard',
-  
+
   // Admin Portal Configuration
   admin: {
     loginUrl: 'https://admin-staging.functionalmovement.site/admin/login',
@@ -56,7 +56,7 @@ export const testConfig = {
       usersData[0] || {
         email: process.env.TEST_EMAIL || 'testqa@gmail.com',
         password: process.env.TEST_PASSWORD || '123456789',
-        name: 'Default User',
+        name: 'User1',
       }
     );
   },
@@ -65,10 +65,12 @@ export const testConfig = {
     validUser: {
       email: process.env.TEST_EMAIL || 'testqa@gmail.com',
       password: process.env.TEST_PASSWORD || '123456789',
+      name: 'Default User',
     },
     invalidUser: {
       email: 'invalid_qa@gmail.com',
       password: 'WrongPassword123!',
+      name: 'User2',
     },
   },
   timeouts: {

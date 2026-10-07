@@ -2,7 +2,7 @@ import { test, expect } from '../../src/fixtures/test.fixture';
 import { testConfig } from '../../config/testConfig';
 
 
-const TARGET_COURSE_ID_OR_NAME = 'Squat Pattern';
+const TARGET_COURSE_ID_OR_NAME = 'FMS Corrective Strategies: Rotation Patterns';
 
 test.describe('FMS User Dashboard Exams Test Suite', () => {
 
@@ -12,7 +12,7 @@ test.describe('FMS User Dashboard Exams Test Suite', () => {
   });
 
   test('Verify user can navigate to Exams tab and take test by course ID or Name', async ({ loginPage, dashboardPage, page }) => {
-    const user = testConfig.getUser('user2');
+    const user = testConfig.getUser('User1');
 
     // 1. Perform Login
     await loginPage.login(user.email, user.password);
